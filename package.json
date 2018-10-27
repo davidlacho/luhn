@@ -1,0 +1,29 @@
+{
+  "name": "luhn-check",
+  "version": "1.0.0",
+  "description": "The Luhn algorithm or Luhn formula, also known as the \"modulus 10\" or \"mod 10\" algorithm, is a simple checksum formula used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers",
+  "main": "check.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiveache/luhn.git"
+  },
+  "keywords": [
+    "luhn"
+  ],
+  "author": "David Lacho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fiveache/luhn/issues"
+  },
+  "homepage": "https://github.com/fiveache/luhn#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
