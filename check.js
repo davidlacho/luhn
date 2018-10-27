@@ -18,4 +18,9 @@
  */
 const checkDigit = digit => true;
 
-module.exports.checkDigit = checkDigit;
+const getArrayFromNumber = number => [9, 10, 11];
+
+module.exports = {
+  checkDigit,
+  getArrayFromNumber,
+};
