@@ -9,7 +9,9 @@ The Luhn algorithm or Luhn formula, also known as the "modulus 10" or "mod 10" a
 ## Installation
 
 Clone this repository to a new directory on your computer:
-`git clone https://github.com/fiveache/luhn.git`
+```
+git clone https://github.com/fiveache/luhn.git
+```
 
 ## Usage
 In the command line, run `node check.js <number>`:
@@ -24,4 +26,3 @@ This project demonstrates:
   * Test-driven development
   * Documentation of code using jsdoc
   * Creating and Exporting Modules
-  
