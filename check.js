@@ -92,6 +92,16 @@ const isModuloOfTen = num => num % 10 === 0;
  */
 const checkDigit = input => isModuloOfTen(sumIndividualDigits(doubleEverySecondDigit(getArrayFromNumber(input))));
 
+// get number from user; print it result to the console.
+// Comment out this line for testing:
+const input = process.argv[2];
+if (input) {
+  console.log(checkDigit(input));
+} else {
+  console.log('node check.js <number>');
+}
+
+
 /*
  * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  * EXPORTS (FOR TESTING)
