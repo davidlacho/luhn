@@ -1,3 +1,8 @@
+/*
+ * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ * PROJECT DESCRIPTION
+ * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ */
 /**
  * Double every second digit, from the rightmost:
  * (1×2) = 2, (8×2) = 16, (3×2) = 6, (2×2) = 4, (9×2) = 18
@@ -11,16 +16,59 @@
  * 79927398713 which has the correct check digit.
  */
 
+/*
+ * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ * HELPER FUNCTIONS
+ * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ */
+
+/**
+ * getArrayFromNumber returns an array of its input
+ * @param  {[number]} num   [takes a number]
+ * @return {[array]}        [all digits of number are new element]
+ */
+const getArrayFromNumber = num => [9, 10, 11];
+
+/**
+ * doubleEverySecondDigit, from the rightmost
+ * @param  {[array]} arr [array of numbers from user input]
+ * @return {[type]}     [array of numbers, second from right doubled]
+ */
+const doubleEverySecondDigit = (arr) => {
+  const reversed = [...arr].reverse();
+  const doubled = reversed.map((val, i) => {
+    if (i % 2 === 0) {
+      return val * 2;
+    }
+    return val;
+  });
+  return doubled.reverse();
+};
+
+/*
+ * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ * IMPLEMENTATION
+ * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ */
+
 /**
  * checkDigit checks if a number is "luhn" valid
- * @param  {[Number]} digit [description]
+ * @param  {[Number]} input [digit to check]
  * @return {[Boolean]}      [if input is a luhn digit returns true]
  */
-const checkDigit = digit => true;
+const checkDigit = (input) => {
+  const inputAsArray = getArrayFromNumber(input);
+  return true;
+};
 
-const getArrayFromNumber = number => [9, 10, 11];
+/*
+ * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ * EXPORTS (FOR TESTING)
+ * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+ */
 
 module.exports = {
   checkDigit,
   getArrayFromNumber,
+  doubleEverySecondDigit
 };
