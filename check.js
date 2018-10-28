@@ -37,7 +37,7 @@ const getArrayFromNumber = num => [9, 10, 11];
 const doubleEverySecondDigit = (arr) => {
   const reversed = [...arr].reverse();
   const doubled = reversed.map((val, i) => {
-    if (i % 2 === 0) {
+    if (i % 2 === 1) {
       return val * 2;
     }
     return val;

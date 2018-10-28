@@ -51,14 +51,15 @@ describe('Helper Functions', () => {
       assert.isTrue(result[4] === 1 && result[3] === 8);
     });
     it('it should double every second digit', () => {
-      const input = [5, 2, 111, 4, 0];
+      const input = [1, 5, 2, 111, 4, 0];
       const result = doubleEverySecondDigit(input);
       assert.isTrue(
-        result[0] === 5 &&
-        result[1] === 4 &&
-        result[2] === 111 &&
-        result[3] === 8 &&
-        result[4] === 0
+        result[0] === 2 &&
+        result[1] === 5 &&
+        result[2] === 4 &&
+        result[3] === 111 &&
+        result[4] === 8 &&
+        result[5] === 0
       );
     });
   });
