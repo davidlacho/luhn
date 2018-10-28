@@ -24,8 +24,8 @@
 
 /**
  * getArrayFromNumber returns an array of its input
- * @param  {[number]} num   [takes a number]
- * @return {[array]}        [all digits of number are new element]
+ * @param  {[number]} num   [input is a number]
+ * @return {[array]}        [where all digits of number are new element]
  */
 const getArrayFromNumber = num => [9, 10, 11];
 
