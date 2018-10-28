@@ -4,6 +4,7 @@ const {
 const {
   checkDigit,
   getArrayFromNumber,
+  doubleEverySecondDigit,
 } = require('../check');
 
 describe('Luhn Checker', () => {
@@ -37,6 +38,23 @@ describe('Helper Functions', () => {
       const result = getArrayFromNumber(number);
       const resultLength = result.length;
       assert.isTrue(inputLength === resultLength);
+    });
+  });
+  describe('doubleEverySecondDigit', () => {
+    it('should return an array', () => {
+      const result = doubleEverySecondDigit([1, 2, 3]);
+      assert.isTrue(Array.isArray(result));
+    });
+    it('it should double every second digit from the rightmost', () => {
+      const input = [5, 2, 111, 4, 0];
+      const result = doubleEverySecondDigit(input);
+      assert.isTrue(
+        result[0] === 10 &&
+        result[1] === 2 &&
+        result[2] === 222 &&
+        result[3] === 4 &&
+        result[4] === 0
+      );
     });
   });
 });
