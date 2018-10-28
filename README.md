@@ -19,6 +19,8 @@ In the command line, run `node check.js <number>`:
 ```
 node check.js 79927398713
 ```
+`check.js` will return `true` if the number inputed is a Luhn value, and `false` if it is not.
+
 ## Summary of what this project demonstrates:
 This project demonstrates:
   * ES6 formatting
