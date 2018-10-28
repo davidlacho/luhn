@@ -5,6 +5,8 @@ const {
   checkDigit,
   getArrayFromNumber,
   doubleEverySecondDigit,
+  sumIndividualDigits,
+  isModuloOfTen,
 } = require('../check');
 
 describe('Luhn Checker', () => {
@@ -61,6 +63,19 @@ describe('Helper Functions', () => {
         result[4] === 8 &&
         result[5] === 0
       );
+    });
+  });
+  describe('sumIndividualDigits', () => {
+    it('should return a number from an array', () => {
+      assert.isTrue(typeof sumIndividualDigits([1, 2, 3]) === 'number');
+    });
+    it('If a digit is greater than 9, it should subtract 9 from the product', () => {
+      assert.strictEqual(sumIndividualDigits([18, 16, 12, 2]), 21);
+    });
+  });
+  describe('isModuloOfTen', () => {
+    it('should return true if a number is a modulo of ten', () => {
+      assert.isTrue(isModuloOfTen(10));
     });
   });
 });

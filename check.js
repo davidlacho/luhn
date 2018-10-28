@@ -27,7 +27,15 @@
  * @param  {[number]} num   [input is a number]
  * @return {[array]}        [where all digits of number are new element]
  */
-const getArrayFromNumber = num => [9, 10, 11];
+const getArrayFromNumber = (num) => {
+  const newArr = [];
+  const stringed = num.toString();
+  for (let i = 0; i < stringed.length; i += 1) {
+    newArr.push(Number(stringed[i]));
+  }
+  return newArr;
+};
+
 
 /**
  * doubleEverySecondDigit, from the rightmost (but not last digit, aka arr[-2])
@@ -47,14 +55,30 @@ const doubleEverySecondDigit = (arr) => {
 
 /**
  * sumIndividualDigits,
+ * If the result of doubling operation is greater
+ * than 9 (e.g., 8 × 2 = 16), subtact 9 from the product
+ *
  * @param  {[array]} arr [array of numbers where every second digit from the rightmost is doubled]
- * @return {[number]}     [a number of all the digits summed together]
+ * @return {[number]}     [sum of individual digits (see above comment)]
  */
 const sumIndividualDigits = (arr) => {
+  let count = 0;
+  arr.forEach((value) => {
+    if (value > 9) {
+      count += (value - 9);
+    } else {
+      count += value;
+    }
+  });
+  return count;
+};
 
-  return []
-}
-
+/**
+ * isModuloOfTen checks if a number is a modulo of 10
+ * @param  {[number]}  num [the sum of all individual digits]
+ * @return {Boolean}     [returns true if the sum's modulo is 10]
+ */
+const isModuloOfTen = num => num % 10 === 0;
 /*
  * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
  * IMPLEMENTATION
@@ -66,10 +90,7 @@ const sumIndividualDigits = (arr) => {
  * @param  {[Number]} input [digit to check]
  * @return {[Boolean]}      [if input is a luhn digit returns true]
  */
-const checkDigit = (input) => {
-  const inputAsArray = getArrayFromNumber(input);
-  return true;
-};
+const checkDigit = input => isModuloOfTen(sumIndividualDigits(doubleEverySecondDigit(getArrayFromNumber(input))));
 
 /*
  * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -80,5 +101,7 @@ const checkDigit = (input) => {
 module.exports = {
   checkDigit,
   getArrayFromNumber,
-  doubleEverySecondDigit
+  doubleEverySecondDigit,
+  sumIndividualDigits,
+  isModuloOfTen,
 };
