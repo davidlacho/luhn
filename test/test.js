@@ -45,14 +45,19 @@ describe('Helper Functions', () => {
       const result = doubleEverySecondDigit([1, 2, 3]);
       assert.isTrue(Array.isArray(result));
     });
-    it('it should double every second digit from the rightmost', () => {
+    it('it should not double the most rightmost number (the check digit)(arr[-1]), but should double arr[-2]', () => {
+      const input = [5, 2, 111, 4, 1];
+      const result = doubleEverySecondDigit(input);
+      assert.isTrue(result[4] === 1 && result[3] === 8);
+    });
+    it('it should double every second digit', () => {
       const input = [5, 2, 111, 4, 0];
       const result = doubleEverySecondDigit(input);
       assert.isTrue(
-        result[0] === 10 &&
-        result[1] === 2 &&
-        result[2] === 222 &&
-        result[3] === 4 &&
+        result[0] === 5 &&
+        result[1] === 4 &&
+        result[2] === 111 &&
+        result[3] === 8 &&
         result[4] === 0
       );
     });

@@ -30,7 +30,7 @@
 const getArrayFromNumber = num => [9, 10, 11];
 
 /**
- * doubleEverySecondDigit, from the rightmost
+ * doubleEverySecondDigit, from the rightmost (but not last digit, aka arr[-2])
  * @param  {[array]} arr [array of numbers from user input]
  * @return {[type]}     [array of numbers, second from right doubled]
  */
@@ -44,6 +44,16 @@ const doubleEverySecondDigit = (arr) => {
   });
   return doubled.reverse();
 };
+
+/**
+ * sumIndividualDigits,
+ * @param  {[array]} arr [array of numbers where every second digit from the rightmost is doubled]
+ * @return {[number]}     [a number of all the digits summed together]
+ */
+const sumIndividualDigits = (arr) => {
+
+  return []
+}
 
 /*
  * -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
